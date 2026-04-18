@@ -6,43 +6,40 @@ Run SDK
 
 Usage
 
-    import { useState, useEffect, useRef } from 'react';
-    import wasmInit, { fetch_from_js } from "@aiamitsuri/interoperability-wrapper-wasm";
+    // Define the interface
+    interface FilterParams {
+        language: string | null;
+        integration: string | null;
+        crates: string | null;
+        developmentkit: string | null;
+        page: string | null;
+        ids: string | null;
+    }
     
-    // Global variable to track if WASM is already loaded in the browser session
-    let isWasmLoaded = false;
+    // Data fetcher for Web (WASM)
+    export async function fetchDataFromWasm(pageNumber: number): Promise<any> {
+        
+        // 1. Ensure WASM is loaded (singleton logic)
+        await ensureWasmInitialized();
     
-    export default function WasmInterface() {
-      const [response, setResponse] = useState<string>("Initializing Wasm...");
-      const initialized = useRef(false);
-    
-      useEffect(() => {
-        // Prevent double-initialization in React Strict Mode
-        if (initialized.current) return;
-        initialized.current = true;
-    
-        const runWasm = async () => {
-          try {
-            // Only run wasmInit if it hasn't been loaded yet in this session
-            if (!isWasmLoaded) {
-              await wasmInit();
-              isWasmLoaded = true;
-            }
-    
-            const data = await fetch_from_js({ page: "1" });
-            setResponse(JSON.stringify(data, null, 2));
-          } catch (e) {
-            console.error("WASM Error:", e);
-            setResponse(`Error: ${e}`);
-          }
+        // 2. Prepare the parameters
+        const params: FilterParams = {
+            language: null,
+            integration: null,
+            crates: null,
+            developmentkit: null,
+            page: pageNumber.toString(),
+            ids: null,
         };
     
-        runWasm();
-      }, []);
-    
-      return (
-             {response}
-      );
+        // 3. Call the bridge function
+        try {
+            const response = await fetch_from_js(params);
+            return response;
+        } catch (error) {
+            console.error("WASM Bridge Error:", error);
+            throw error;
+        }
     }
 
 Screenshot 1
