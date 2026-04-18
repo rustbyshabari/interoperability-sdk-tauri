@@ -43,9 +43,9 @@ Usage
     }
 
 Screenshot (Page 1)
-<img width="1920" height="1080" alt="tauri1" src="https://github.com/user-attachments/assets/b6467bd0-d67f-4cae-9bf1-cd25d92bd6ba" />
+<img width="1920" height="1017" alt="tauri1" src="https://github.com/user-attachments/assets/b6cdb603-7b6d-4ee0-a61f-d749c5d76205" />
 
 Screenshot (Page 4)
-<img width="1920" height="1080" alt="tauri2" src="https://github.com/user-attachments/assets/d6d49f4d-8a4c-4c46-ad70-2f199b7fd857" />
+<img width="1920" height="1015" alt="tauri2" src="https://github.com/user-attachments/assets/bf776469-e6e3-4165-93da-27e614548b64" />
 
 **@AIAmitSuri, Co-creator/Co-founder (🙏 Mata Shabri 🙏)**
