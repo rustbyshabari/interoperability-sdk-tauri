@@ -42,9 +42,10 @@ Usage
         }
     }
 
-Screenshot 1
-<img width="1920" height="1080" alt="Screenshot (194)" src="https://github.com/user-attachments/assets/456fbf61-49bf-47f9-8d61-b0ee982c021e" />
-Screenshot 2
-<img width="1920" height="1080" alt="Screenshot (193)" src="https://github.com/user-attachments/assets/4abe054c-9d24-4d4c-931a-55ea8c30d0aa" />
+Screenshot (Page 1)
+<img width="1920" height="1080" alt="tauri1" src="https://github.com/user-attachments/assets/b6467bd0-d67f-4cae-9bf1-cd25d92bd6ba" />
+
+Screenshot (Page 4)
+<img width="1920" height="1080" alt="tauri2" src="https://github.com/user-attachments/assets/d6d49f4d-8a4c-4c46-ad70-2f199b7fd857" />
 
 **@AIAmitSuri, Co-creator/Co-founder (🙏 Mata Shabri 🙏)**
