@@ -1,1 +1,1 @@
-# interoperability-sdk-tauri
+# interoperability-sdk-react
