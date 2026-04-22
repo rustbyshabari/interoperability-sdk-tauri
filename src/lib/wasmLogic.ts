@@ -1,14 +1,5 @@
 import wasmInit, { fetch_from_js } from "@aiamitsuri/interoperability-wrapper-wasm";
 
-interface FilterParams {
-    integration: string | null;
-    developmentkit: string | null;
-    language: string | null;
-    crates: string | null;
-    page: string | null;
-    ids: string | null;
-}
-
 export interface FilterResponse {
     message: string;
     data: any[]; 
@@ -31,18 +22,25 @@ async function ensureWasmInitialized() {
     return wasmPromise;
 }
 
+const params = {
+    language: null,
+    integration: null,
+    crates: null,
+    developmentkit: null,
+    page: "1",
+    ids: null
+};
+
 export async function fetchDataFromWasm(pageNumber: number): Promise<FilterResponse> {
     await ensureWasmInitialized();
+    
+    params.page = pageNumber.toString();
 
-    const params: FilterParams = {
-        integration: null,
-        developmentkit: null,
-        language: null,
-        crates: null,
-        page: pageNumber.toString(),
-        ids: null,
-    };
-
-    const response = await fetch_from_js(params);
-    return response as FilterResponse;
+    try {
+		const response: FilterResponse = await fetch_from_js(params);
+		return response;
+    } catch (error) {
+        console.error("WASM Bridge Error:", error);
+        throw error;
+    }
 }
