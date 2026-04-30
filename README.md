@@ -8,7 +8,7 @@ Run SDK
 
 Usage
 
-    import wasmInit, { fetch_from_js } from "@aiamitsuri/interoperability-wrapper-wasm";
+    import wasmInit, { fetch_from_js } from "@rustbyshabari/interoperability-wrapper-wasm";
     
     export interface FilterResponse {
         message: string;
